@@ -39,9 +39,8 @@ const Futures: React.FC = () => {
       {/* Image list */}
       <div className="overflow-x-auto flex gap-6 pb-4 scrollbar-hide">
         {screenshots.map((src, index) => (
-          <div className="relative w-72 h-auto">
+          <div key={index} className="relative w-72 h-auto">
             <Image
-              key={index}
               src={src}
               alt={`Screenshot ${index + 1}`}
               width={300}
