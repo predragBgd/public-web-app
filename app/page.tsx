@@ -28,7 +28,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className="bg-gray-50 ">
+      <section className="bg-gray-100 py-16">
         <Features />
       </section>
     </>

@@ -4,14 +4,14 @@ import React from "react";
 
 const faqs = [
   {
-    question: "What is AstLinkedIn?",
+    question: "What is LinkedInAddOn?",
     answer:
-      "AstLinkedIn is a Chrome extension that automates your LinkedIn activity, helping you connect, message, and grow your network efficiently.",
+      "LinkedInAddOn is a Chrome extension that automates your LinkedIn activity, helping you connect, message, and grow your network efficiently.",
   },
   {
     question: "Is it safe to use?",
     answer:
-      "Yes, AstLinkedIn operates within LinkedIn's usage limits to minimize any risk to your account.",
+      "Yes, LinkedInAddOn operates within LinkedIn's usage limits to minimize any risk to your account.",
   },
   {
     question: "How do I install the extension?",
@@ -22,6 +22,25 @@ const faqs = [
     question: "Do I need a LinkedIn Premium account?",
     answer:
       "No, the extension works with free accounts too. However, premium accounts might unlock more features.",
+  },
+  {
+    question: "Can I personalize the messages?",
+    answer:
+      "Absolutely. You can use templates with dynamic tags like {firstName} or {company} for personalized outreach.",
+  },
+  {
+    question: "What are the daily action limits?",
+    answer:
+      "We recommend up to 50 connection requests and up to 100 messages per day, but these can be customized in the settings.",
+  },
+  {
+    question: "How do I install the extension?",
+    answer: `Visit the Chrome Web Store, click "Add to Chrome", and follow the setup instructions after installation.`,
+  },
+  {
+    question: "Who can I contact for support?",
+    answer:
+      "Reach out via the contact form on our website or email us at pecabegd@gmail.com for help.",
   },
 ];
 
@@ -42,7 +61,7 @@ const FAQ = () => {
           <div
             key={index}
             onClick={() => toggleFaq(index)}
-            className="bg-white p-6 rounded-2xl shadow-md transition-transform hover:-translate-y-1 cursor-pointer"
+            className="m-4 p-4 rounded-lg bg-gray-50 shadow-xl cursor-pointer hover:shadow-2xl  hover:-translate-y-2 transition"
           >
             <h3 className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none">
               {faq.question}

@@ -15,7 +15,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-16">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-800">
           What We Do for You
@@ -27,7 +27,7 @@ export default function Features() {
               key={index}
               className={`${
                 index === 2 ? "md:col-span-2" : ""
-              } bg-white border border-gray-200 rounded-md p-8 shadow-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl`}
+              } bg-white border border-gray-200 rounded-md p-8 shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl`}
             >
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 group-hover:text-purple-600 transition">
                 {feature.title}
