@@ -5,14 +5,20 @@ import Image from "next/image";
 import { useAuth } from "@root/lib/useAuth";
 import { auth } from "@root/lib/firebase";
 import AuthModal from "@/components/Auth/AuthModal";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navigation = () => {
   const { user, role } = useAuth();
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleSignOut = async () => {
     try {
       await auth.signOut();
+      if (role === "admin" && pathname === "/user-reviews") {
+        router.push("/");
+      }
     } catch (error) {
       console.error("Error signing out:", error);
     }
