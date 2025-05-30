@@ -10,6 +10,29 @@
 !.yarn/releases
 !.yarn/versions
 
+# Firebase
+.firebase/
+**/firebase.ts
+firebase-debug.log
+firestore-debug.log
+# Firebase configuration files
+.firebaserc
+firebase.json
+functions/firebase.json
+# Firebase hosting cache
+.firebase/hosting.*
+# Firebase Admin SDK service account files (contain private keys)
+*firebase-adminsdk*.json
+firebase-service-account*.json
+service-account*.json
+# Specific Firebase admin SDK file referenced in .env
+# apps/backend/linkedin-add-on-firebase-adminsdk-fbsvc-f3d3398580.json
+apps/backend/linkedin-add-on-firebase-adminsdk-fbsvc-59c05a6bf1.json
+
+# Firebase client configuration files (contain API keys)
+**/firebase.client.ts
+firebase.client.ts
+
 # testing
 /coverage
 
