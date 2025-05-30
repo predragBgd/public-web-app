@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import ScreenshotSlider from "@/components/ScreenshotSlider/ScreenshotSlider";
 import RateUs from "@/components/RateUs/RateUs";
+import { Metadata } from "next";
 
 const features: string[] = [
   "Auto-connect with LinkedIn users in your niche",
@@ -10,7 +11,23 @@ const features: string[] = [
   "Set daily limits and intervals for safe automation",
   "Safe usage within LinkedIn usage guidelines",
 ];
-
+export const metadata: Metadata = {
+  title: "AstLinkedIn Features – Automate Your LinkedIn Growth",
+  description:
+    "Discover powerful features of AstLinkedIn: auto-connect, personalized messaging, and safe automation to grow your LinkedIn network efficiently.",
+  keywords: [
+    "LinkedIn automation features",
+    "AstLinkedIn features",
+    "LinkedIn auto connect",
+    "LinkedIn outreach tool",
+    "grow LinkedIn network",
+    "automated messaging LinkedIn",
+  ],
+  metadataBase: new URL("https://publicaddon.com"),
+  icons: {
+    icon: "/images/public-logo.png",
+  },
+};
 const Futures: React.FC = () => {
   return (
     <section className="max-w-5xl mx-auto px-4 py-12">

@@ -3,12 +3,23 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
+import ChatContainer from "./components/ChatContainer/ChatContainer";
 
 const poppins = Poppins({ weight: ["400", "600"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Linked In AddOn",
   description: "LinkedInAddOn - Your AI-Powered LinkedIn Assistant",
+  keywords: [
+    "LinkedIn automation",
+    "LinkedIn outreach",
+    "AI assistant",
+    "AstLinkedIn",
+  ],
+  metadataBase: new URL("https://publicaddon.com"),
+  icons: {
+    icon: "/images/public-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +34,7 @@ export default function RootLayout({
       >
         <Navigation />
         {children}
+        <ChatContainer />
         <Footer />
       </body>
     </html>

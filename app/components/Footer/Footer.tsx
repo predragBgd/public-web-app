@@ -5,46 +5,69 @@ import logo from "@root/public/public-logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-600 text-gray-300 py-10 px-6 mt-16">
+    <div className="bg-gray-500 text-gray-300 py-10 px-6 mt-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
         {/* Logo & Copyright */}
         <div>
-          <div className="flex justify-center md:justify-start mb-4">
-            <Image src={logo} alt="Publicque Logo" width={60} height={60} />
+          <div className="flex justify-center md:justify-start mb-4 space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src={logo}
+                alt="Publicque Logo"
+                width={50}
+                height={50}
+                className="transition-transform duration-300 hover:scale-110 hover:rotate-4"
+              />
+              <h3 className="text-2xl font-bold text-yellow-500">Publique</h3>
+            </Link>
           </div>
-          <h3 className="text-xl font-bold text-yellow-500 mb-2">Publicque</h3>
-          <p className="text-sm">
+          <p className="text-l font-semibold">
             &copy; {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
 
-        {/* Useful Links */}
-        <ul className="space-y-2 text-bold">
-          <li>
-            <Link href="/about" className="hover:text-yellow-400 transition">
+        {/* Linkovi */}
+        <ul className="space-y-2">
+          <li className="font-semibold">
+            <Link
+              href="/about"
+              className="text-lg hover:text-yellow-400 transition"
+            >
               About
             </Link>
           </li>
-          <li>
-            <Link href="/features" className="hover:text-yellow-400 transition">
+          <li className="font-semibold">
+            <Link
+              href="/features"
+              className="text-lg hover:text-yellow-400 transition"
+            >
               Features
             </Link>
           </li>
-
-          <li>
-            <Link href="/contact" className="hover:text-yellow-400 transition">
+          <li className="font-semibold">
+            <Link
+              href="/contact"
+              className="text-lg hover:text-yellow-400 transition"
+            >
               Contact
             </Link>
           </li>
         </ul>
-        <ul className="space-y-2 text-sm">
-          <li>
-            <Link href="/faq" className="hover:text-yellow-400 transition">
+
+        <ul className="space-y-2">
+          <li className="font-semibold">
+            <Link
+              href="/faq"
+              className="text-lg hover:text-yellow-400 transition"
+            >
               FAQ
             </Link>
           </li>
-          <li>
-            <Link href="/privacy" className="hover:text-yellow-400 transition">
+          <li className="font-semibold">
+            <Link
+              href="/privacy"
+              className="text-lg hover:text-yellow-400 transition"
+            >
               Privacy Policy
             </Link>
           </li>

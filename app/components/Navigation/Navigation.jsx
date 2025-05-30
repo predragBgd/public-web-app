@@ -1,17 +1,32 @@
-import React from "react";
-
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "@root/lib/useAuth";
+import { auth } from "@root/lib/firebase";
+import AuthModal from "@/components/Auth/AuthModal";
 
 const Navigation = () => {
+  const { user, role } = useAuth();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut();
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   return (
-    <header className="bg-gray-600 shadow-md">
-      <nav className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <div className="flex items-center">
+    <header className="bg-gray-500 shadow-md">
+      <nav className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center justify-center space-x-2">
           <Link href="/">
             <Image src="/public-logo.png" alt="Logo" width={40} height={40} />
           </Link>
         </div>
+
         <div className="flex space-x-6 text-l font-medium text-gray-700">
           <Link
             href="/"
@@ -43,8 +58,36 @@ const Navigation = () => {
           >
             FAQ
           </Link>
+
+          {user ? (
+            <>
+              {role === "admin" && (
+                <Link
+                  href="/user-reviews"
+                  className="text-white font-semibold hover:text-blue-200 transition"
+                >
+                  Admin Chat
+                </Link>
+              )}
+              <button
+                onClick={handleSignOut}
+                className="text-white font-semibold hover:text-red-300 transition cursor-pointer"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => setShowModal(true)}
+              className="text-white font-semibold hover:text-blue-200 transition cursor-pointer"
+            >
+              Login
+            </button>
+          )}
         </div>
       </nav>
+
+      {showModal && <AuthModal onClose={() => setShowModal(false)} />}
     </header>
   );
 };

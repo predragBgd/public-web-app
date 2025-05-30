@@ -1,6 +1,24 @@
 import React from "react";
 import DemoVideo from "@/components/DemoVideo/DemoVideo";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Watch AstLinkedIn in Action",
+  description:
+    "Discover how our Chrome extension automates your LinkedIn outreach and helps you save time while expanding your network. Watch the demo to see how it works in real-time.",
+
+  keywords: [
+    "LinkedIn automation",
+    "AI assistant",
+    "LinkedIn outreach",
+    "LinkedIn profile boost",
+    "Public LinkedIn App",
+  ],
+  metadataBase: new URL("https://publicaddon.com"),
+  icons: {
+    icon: "/images/public-logo.png",
+  },
+};
 const Demo = () => {
   return (
     <div className="min-h-screen px-4 py-16 bg-white text-center">

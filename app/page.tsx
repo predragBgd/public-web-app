@@ -1,6 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
 import Features from "./components/Features/Features";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AstLinkedIn - Boost Your LinkedIn Profile with AI",
+  description:
+    "Automate connection requests and personalized messaging on LinkedIn. Save hours every week using Public LinkedIn App.",
+
+  keywords: [
+    "LinkedIn automation",
+    "AI assistant",
+    "LinkedIn outreach",
+    "LinkedIn profile boost",
+    "Public LinkedIn App",
+  ],
+  metadataBase: new URL("https://publicaddon.com"),
+  icons: {
+    icon: "/images/public-logo.png",
+  },
+};
 
 export default function Home() {
   return (

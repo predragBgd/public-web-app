@@ -23,6 +23,12 @@
       "@root/*": ["./*"] // Alias for root folder
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "emoji-picker.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

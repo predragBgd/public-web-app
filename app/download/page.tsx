@@ -1,5 +1,18 @@
 import Link from "next/link";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Install AstLinkedIn Chrome Extension",
+  description:
+    "Automate your LinkedIn activities with ease using our powerful browser extension.",
+
+  keywords: ["Install AstLinkedIn", "Add to Chrome"],
+  metadataBase: new URL("https://publicaddon.com"),
+  icons: {
+    icon: "/images/public-logo.png",
+  },
+};
 
 const Download = () => {
   return (
