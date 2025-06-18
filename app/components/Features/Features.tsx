@@ -1,14 +1,19 @@
+import Feature from "../Feature/Feature";
+
 export default function Features() {
   const features = [
     {
+      id: "1",
       title: "AI Summary Optimization",
       text: "We write a professional and engaging LinkedIn summary using AI.",
     },
     {
+      id: "2",
       title: "Strategic Keywords",
       text: "We enhance your visibility in recruiter searches.",
     },
     {
+      id: "3",
       title: "Experience Restructuring",
       text: "We rewrite your roles and achievements to showcase your best.",
     },
@@ -23,17 +28,12 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <div
+            <Feature
               key={index}
-              className={`${
-                index === 2 ? "md:col-span-2" : ""
-              } bg-white border border-gray-200 rounded-md p-8 shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl`}
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800 group-hover:text-purple-600 transition">
-                {feature.title}
-              </h3>
-              <p className="text-lg text-gray-600">{feature.text}</p>
-            </div>
+              title={feature.title}
+              text={feature.text}
+              isWide={index === 2}
+            />
           ))}
         </div>
       </div>

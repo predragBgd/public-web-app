@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Heading from "../Heading/Heading";
 
 const ContactForm = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -31,10 +32,11 @@ const ContactForm = () => {
   return (
     <section className="min-h-screen bg-gray-100 py-16 px-4">
       <div className="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-xl">
-        <h1 className="text-3xl font-bold mb-4 text-gray-800">Contact Us</h1>
-        <p className="mb-6 text-gray-600">
-          Have a question or feedback? We'd love to hear from you!
-        </p>
+        <Heading
+          titleClassName="text-3xl font-bold mb-4 text-gray-800"
+          title="Contact Us"
+          subtitle="Have a question or feedback? We'd love to hear from you!"
+        />
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block mb-1 font-medium text-gray-700">Name</label>

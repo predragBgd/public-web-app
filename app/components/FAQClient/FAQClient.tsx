@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Heading from "../Heading/Heading";
 
 const faqs = [
   {
@@ -52,9 +53,10 @@ const FAQClient = () => {
 
   return (
     <section className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8 text-yellow-600">
-        Frequently Asked Questions
-      </h1>
+      <Heading
+        titleClassName="text-3xl font-bold text-center mb-8 text-yellow-600"
+        title="Frequently Asked Questions"
+      />
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div
@@ -62,13 +64,13 @@ const FAQClient = () => {
             onClick={() => toggleFaq(index)}
             className="m-4 p-4 rounded-lg bg-gray-50 shadow-xl cursor-pointer hover:shadow-2xl  hover:-translate-y-2 transition"
           >
-            <h3 className="w-full text-left font-semibold text-lg text-gray-800 focus:outline-none">
-              {faq.question}
-            </h3>
-
-            <p className="mt-2 text-gray-600 transition-all duration-300 ease-in-out">
-              {openFaq === index ? faq.answer : "..."}
-            </p>
+            <Heading
+              titleClassName="text-lg font-semibold text-gray-800"
+              title={faq.question}
+              level="h3"
+              subtitleClassName="text-gray-600"
+              subtitle={openFaq === index ? faq.answer : "..."}
+            />
           </div>
         ))}
       </div>
