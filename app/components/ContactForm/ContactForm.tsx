@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import Heading from "../Heading/Heading";
+import Button from "../Button/Button";
 
-const ContactForm = () => {
+const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -74,12 +75,11 @@ const ContactForm = () => {
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          <button
+          <Button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
-          >
-            Send Message
-          </button>
+            buttonClassName="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
+            label="Send Message"
+          />
         </form>
       </div>
     </section>
