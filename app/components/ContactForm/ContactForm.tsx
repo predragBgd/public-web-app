@@ -1,8 +1,11 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import Heading from "../Heading/Heading";
+import Input from "../Input/Input";
+import TextArea from "../TextArea/TextArea";
 import Button from "../Button/Button";
+import { sendContact } from "@/actions/contact";
 
 const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -15,20 +18,28 @@ const ContactForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   // e.preventDefault();
+  //   const res = await fetch("/api/contact", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(form),
+  //   });
 
-    if (res.ok) {
-      alert("Message sent!");
+  //   if (res.ok) {
+  //     // alert("Message sent!");
+  //     setForm({ name: "", email: "", message: "" });
+  //     alert("Message sent!");
+  //   } else {
+  //     alert("Failed to send message.");
+  //   }
+  // };
+  const handleFormAction = async (_: FormData) => {
+    try {
+      await sendContact(_ as FormData);
       setForm({ name: "", email: "", message: "" });
-    } else {
-      alert("Failed to send message.");
-    }
+      alert("Message sent!");
+    } catch (error) {}
   };
   return (
     <section className="min-h-screen bg-gray-100 py-16 px-4">
@@ -37,49 +48,39 @@ const ContactForm: React.FC = () => {
           titleClassName="text-3xl font-bold mb-4 text-gray-800"
           title="Contact Us"
           subtitle="Have a question or feedback? We'd love to hear from you!"
+          level="h2"
         />
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form action={handleFormAction} className="space-y-4">
           <div>
-            <label className="block mb-1 font-medium text-gray-700">Name</label>
-            <input
-              type="text"
+            <Input
+              labelText="Name"
               name="name"
               value={form.name}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
           <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="text"
+            <Input
+              labelText="Email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
           <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Message
-            </label>
-            <textarea
+            <TextArea
+              labelText="Message"
               name="message"
               value={form.message}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
           <Button
             type="submit"
             buttonClassName="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
-            label="Send Message"
-          />
+          >
+            Send Message
+          </Button>
         </form>
       </div>
     </section>

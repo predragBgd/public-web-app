@@ -14,6 +14,8 @@ import {
 } from "firebase/firestore";
 import { useAuth } from "@root/lib/useAuth";
 import { useRouter } from "next/navigation";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 
 type Reply = {
   id: string;
@@ -151,7 +153,8 @@ export default function ChatBox() {
             ))}
 
             <div className="flex gap-2 mt-2 w-full">
-              <input
+              <Input
+                placeholder="Reply..."
                 value={replyInputs[msg.id] || ""}
                 onChange={(e) =>
                   setReplyInputs((prev) => ({
@@ -159,34 +162,32 @@ export default function ChatBox() {
                     [msg.id]: e.target.value,
                   }))
                 }
-                className="flex-1 p-2 border rounded bg-white w-3"
-                placeholder="Reply..."
               />
-              <button
+              <Button
+                buttonClassName="text-blue-500 py-2 cursor-pointer hover:underline"
                 onClick={() => handleReplySend(msg.id)}
-                className="text-blue-500 py-2 cursor-pointer hover:underline"
               >
                 Reply
-              </button>
+              </Button>
             </div>
           </div>
         ))}
       </div>
 
       {role !== "admin" && (
-        <div className="flex gap-2 w-full">
-          <input
+        <div className="flex gap-2 w-full items-center">
+          <Input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 p-2 border rounded w-3"
+            required
             placeholder="Send message..."
           />
-          <button
+          <Button
+            buttonClassName="bg-green-600 text-white px-4 h-10 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleSend}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send
-          </button>
+            Send Message
+          </Button>
         </div>
       )}
     </div>

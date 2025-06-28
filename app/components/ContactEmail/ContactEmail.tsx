@@ -1,10 +1,16 @@
 import React from "react";
+import Heading from "../Heading/Heading";
 
 const ContactEmail = () => {
   return (
     <section className="mt-12 text-center">
-      <h2 className="text-2xl font-semibold">Contact Information</h2>
-      <p className="mt-4 text-lg">Feel free to reach out to us at:</p>
+      <Heading
+        titleClassName="text-2xl font-semibold"
+        title="Contact Information"
+        subtitleClassName="mt-4 text-lg"
+        subtitle="Feel free to reach out to us at:"
+        level="h2"
+      />
       <p className="mt-2">
         <strong>Email:</strong>
         <a href="mailto:spublic@public.com" className="text-blue-500">

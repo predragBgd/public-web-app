@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
 import { Metadata } from "next";
+import ActionLink from "@/components/ActionLink/ActionLink";
 
 export const metadata: Metadata = {
   title: "Install AstLinkedIn Chrome Extension",
@@ -25,14 +25,13 @@ const Download = () => {
           Automate your LinkedIn activities with ease using our powerful browser
           extension.
         </p>
-        <a
+        <ActionLink
           href="https://chrome.google.com/webstore/detail/your-extension-id"
           target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition"
+          linkClassName="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition"
         >
           Add to Chrome
-        </a>
+        </ActionLink>
         <div className="mt-12 text-left">
           <h2 className="text-2xl font-semibold mb-4">How to Install?</h2>
           <ol className="list-decimal list-inside space-y-3 text-gray-700">
@@ -48,9 +47,9 @@ const Download = () => {
         <div className="mt-16">
           <p>
             Need help?
-            <Link href="/contact" className="text-blue-600 underline">
+            <ActionLink href="/contact" linkClassName="text-blue-600 underline">
               Contact support
-            </Link>
+            </ActionLink>
           </p>
         </div>
       </div>

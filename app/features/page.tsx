@@ -1,10 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import ScreenshotSlider from "@/components/ScreenshotSlider/ScreenshotSlider";
 import RateUs from "@/components/RateUs/RateUs";
 import { Metadata } from "next";
 import Heading from "@/components/Heading/Heading";
 import Paragraf from "@/components/Paragraf/Paragraf";
+import ActionLink from "@/components/ActionLink/ActionLink";
 
 const features: string[] = [
   "Auto-connect with LinkedIn users in your niche",
@@ -55,12 +55,12 @@ const Futures: React.FC = () => {
       </div>
       {/* Call to Action */}
       <div className="text-center mb-12">
-        <Link
+        <ActionLink
           href="/download"
-          className="px-6 py-3 bg-yellow-600 text-gray-900 font-semibold rounded-xl hover:bg-gray-900   hover:text-yellow-500 transition"
+          linkClassName="px-6 py-3 bg-yellow-600 text-gray-900 font-semibold rounded-xl hover:bg-gray-900   hover:text-yellow-500 transition"
         >
           Try for Free
-        </Link>
+        </ActionLink>
       </div>
       <ScreenshotSlider />
       <RateUs />

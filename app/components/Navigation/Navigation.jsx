@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@root/lib/useAuth";
 import { auth } from "@root/lib/firebase";
@@ -8,6 +7,7 @@ import AuthModal from "@/components/Auth/AuthModal";
 import { usePathname, useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
+import Link from "next/link";
 
 const Navigation = () => {
   const { user, role } = useAuth();
@@ -40,12 +40,12 @@ const Navigation = () => {
           >
             Home
           </Link>
-          <Link
+          <nLink
             href="/about"
             className="text-white font-semibold hover:text-blue-200 transition"
           >
             About
-          </Link>
+          </nLink>
           <Link
             href="/features"
             className="text-white font-semibold hover:text-blue-200 transition"
@@ -79,14 +79,18 @@ const Navigation = () => {
                 label="Logout"
                 onClick={handleSignOut}
                 buttonClassName="text-white font-semibold hover:text-red-300 transition cursor-pointer"
-              />
+              >
+                Logout
+              </Button>
             </>
           ) : (
             <Button
               label="Login"
               onClick={() => setShowModal(true)}
               buttonClassName="text-white font-semibold hover:text-blue-200 transition cursor-pointer"
-            />
+            >
+              Login
+            </Button>
           )}
         </div>
       </nav>
