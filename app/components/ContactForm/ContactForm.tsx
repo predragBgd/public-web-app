@@ -6,6 +6,7 @@ import Input from "../Input/Input";
 import TextArea from "../TextArea/TextArea";
 import Button from "../Button/Button";
 import { sendContact } from "@/actions/contact";
+import Label from "../Label/Label";
 
 const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -52,24 +53,31 @@ const ContactForm: React.FC = () => {
         />
         <form action={handleFormAction} className="space-y-4">
           <div>
-            <Input
-              labelText="Name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-            />
+            <Label
+              className="block mb-1 font-medium text-gray-700"
+              htmlFor="name"
+            >
+              Name
+            </Label>
+            <Input name="name" value={form.name} onChange={handleChange} />
           </div>
           <div>
-            <Input
-              labelText="Email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-            />
+            <Label
+              className="block mb-1 font-medium text-gray-700"
+              htmlFor="email"
+            >
+              Email
+            </Label>
+            <Input name="email" value={form.email} onChange={handleChange} />
           </div>
           <div>
+            <Label
+              className="block mb-1 font-medium text-gray-700"
+              htmlFor="message"
+            >
+              Message
+            </Label>
             <TextArea
-              labelText="Message"
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -77,7 +85,7 @@ const ContactForm: React.FC = () => {
           </div>
           <Button
             type="submit"
-            buttonClassName="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
+            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
           >
             Send Message
           </Button>

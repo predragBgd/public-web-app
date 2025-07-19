@@ -40,12 +40,12 @@ const Navigation = () => {
           >
             Home
           </Link>
-          <nLink
+          <Link
             href="/about"
             className="text-white font-semibold hover:text-blue-200 transition"
           >
             About
-          </nLink>
+          </Link>
           <Link
             href="/features"
             className="text-white font-semibold hover:text-blue-200 transition"
@@ -78,7 +78,7 @@ const Navigation = () => {
               <Button
                 label="Logout"
                 onClick={handleSignOut}
-                buttonClassName="text-white font-semibold hover:text-red-300 transition cursor-pointer"
+                className="text-yellow-500 font-semibold hover:text-red-300 transition cursor-pointer"
               >
                 Logout
               </Button>
@@ -87,7 +87,7 @@ const Navigation = () => {
             <Button
               label="Login"
               onClick={() => setShowModal(true)}
-              buttonClassName="text-white font-semibold hover:text-blue-200 transition cursor-pointer"
+              className="text-white font-semibold hover:text-blue-200 transition cursor-pointer"
             >
               Login
             </Button>

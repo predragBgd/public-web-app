@@ -4,6 +4,9 @@ import React, { useState, useRef } from "react";
 import AuthModal from "../Auth/AuthModal";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
+import Input from "../Input/Input";
+import Textarea from "../TextArea/TextArea";
+import Button from "../Button/Button";
 
 const initialReviews = [
   {
@@ -179,10 +182,9 @@ const RateUs = () => {
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4 mb-10">
-            <input
+            <Input
               type="text"
               placeholder="Your Name"
-              className="w-full p-3 border rounded-lg"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -191,9 +193,9 @@ const RateUs = () => {
                 Name must be at least 3 characters long.
               </p>
             )}
-            <textarea
+            <Textarea
+              name="comment"
               placeholder="Your Comment"
-              className="w-full p-3 border rounded-lg resize-none"
               rows={4}
               ref={commentRef}
               value={comment}
@@ -205,13 +207,13 @@ const RateUs = () => {
               </p>
             )}
             {/* Emoji Picker Toggle */}
-            <button
+            <Button
               type="button"
               onClick={() => setShowEmojiPicker(!showEmojiPicker)}
               className="text-sm text-blue-500 hover:underline"
             >
               {showEmojiPicker ? "Hide Emoji Picker" : "Add Emoji 😀"}
-            </button>
+            </Button>
 
             {/* Emoji Picker */}
             {showEmojiPicker && (
@@ -241,24 +243,24 @@ const RateUs = () => {
               <p className="text-red-500 text-sm">Rating is required.</p>
             )}
 
-            <button
+            <Button
               type="submit"
               className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-6 rounded-lg font-semibold"
             >
               Add Comment
-            </button>
+            </Button>
           </form>
         </div>
       ) : (
         <div className="mx-auto px-4 py-12 bg-white rounded-2xl shadow-md mt-10 text-center">
           <h2 className="text-2xl font-bold mb-4">
             Please{" "}
-            <button
+            <Button
               onClick={() => setShowModal(true)}
               className="text-yellow-500 hover:underline font-semibold cursor-pointer"
             >
               Log In
-            </button>{" "}
+            </Button>{" "}
             to Rate Us
           </h2>
         </div>

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { auth, signInWithEmailAndPassword, db } from "@root/lib/firebase";
 import { useRouter } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 
 interface AuthModalProps {
   onClose: () => void;
@@ -67,30 +69,29 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
         <form onSubmit={handleAuth} className="space-y-4">
-          <input
+          <Input
             type="email"
             placeholder="Email"
-            className="w-full p-2 rounded bg-gray-100 border border-gray-300"
+            // className="w-full p-2 rounded bg-gray-100 border border-gray-300"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
 
-          <input
+          <Input
             type="password"
             placeholder="Password"
-            className="w-full p-2 rounded bg-gray-100 border border-gray-300"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
 
-          <button
+          <Button
             type="submit"
             className="w-full p-2 bg-yellow-500 text-black font-bold rounded hover:bg-yellow-400"
           >
             Log In
-          </button>
+          </Button>
         </form>
       </div>
     </div>

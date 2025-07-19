@@ -37,7 +37,7 @@ export default function ChatBox() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const [replyInputs, setReplyInputs] = useState<{ [key: string]: string }>({});
-  const router = useRouter();
+  const [isButtonBusy, setIsButtonBusy] = useState(false);
 
   useEffect(() => {
     if (loading) return;
@@ -106,6 +106,7 @@ export default function ChatBox() {
   };
 
   const handleReplySend = async (messageId: string) => {
+    setIsButtonBusy(true);
     const replyMessage = replyInputs[messageId];
     if (!replyMessage?.trim() || !user?.email) return;
 
@@ -119,6 +120,10 @@ export default function ChatBox() {
     });
 
     setReplyInputs((prev) => ({ ...prev, [messageId]: "" }));
+
+    setTimeout(() => {
+      setIsButtonBusy(false);
+    }, 2000);
   };
 
   if (loading) {
@@ -164,8 +169,9 @@ export default function ChatBox() {
                 }
               />
               <Button
-                buttonClassName="text-blue-500 py-2 cursor-pointer hover:underline"
+                className="text-blue-500 py-2 cursor-pointer hover:underline"
                 onClick={() => handleReplySend(msg.id)}
+                isLoading={isButtonBusy}
               >
                 Reply
               </Button>
@@ -183,7 +189,7 @@ export default function ChatBox() {
             placeholder="Send message..."
           />
           <Button
-            buttonClassName="bg-green-600 text-white px-4 h-10 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-green-600 text-white px-4 h-10 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleSend}
           >
             Send Message

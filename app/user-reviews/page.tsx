@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "@root/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import ChatBox from "@/components/ChatBox/ChatBox";
+import Paragraf from "@/components/Paragraf/Paragraf";
 
 function UserRevews() {
   const router = useRouter();
@@ -55,7 +56,9 @@ function UserRevews() {
         <h2 className="text-4xl font-extrabold text-yellow-600 mb-4">
           User Chat
         </h2>
-        <p className="text-gray-600 text-lg">Chat with other users.</p>
+        <Paragraf className="text-gray-600 text-lg">
+          Chat with other users.
+        </Paragraf>
       </div>
       <ChatBox />
     </section>

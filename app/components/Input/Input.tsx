@@ -1,7 +1,7 @@
 import React from "react";
 
-interface TextInputProps {
-  labelText?: string;
+interface InputProps {
+  type?: "text" | "email" | "password" | "number";
   name?: string;
   value: string;
   placeholder?: string;
@@ -9,8 +9,8 @@ interface TextInputProps {
   required?: boolean;
 }
 
-const TextInput: React.FC<TextInputProps> = ({
-  labelText,
+const Input: React.FC<InputProps> = ({
+  type,
   name,
   value,
   placeholder,
@@ -19,11 +19,8 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
   return (
     <div>
-      <label className="block mb-1 font-medium text-gray-700" htmlFor={name}>
-        {labelText}
-      </label>
       <input
-        type="text"
+        type={type}
         id={name}
         name={name}
         value={value}
@@ -36,4 +33,4 @@ const TextInput: React.FC<TextInputProps> = ({
   );
 };
 
-export default TextInput;
+export default Input;

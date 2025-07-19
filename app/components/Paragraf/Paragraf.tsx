@@ -1,12 +1,12 @@
 import React from "react";
 
 interface ParagrafProps {
-  paragrafClassName?: string;
+  className?: string;
   children?: React.ReactNode;
 }
 
-const Paragraf: React.FC<ParagrafProps> = ({ paragrafClassName, children }) => {
-  return <p className={paragrafClassName}>{children}</p>;
+const Paragraf: React.FC<ParagrafProps> = ({ className, children }) => {
+  return <p className={className}>{children}</p>;
 };
 
 export default Paragraf;

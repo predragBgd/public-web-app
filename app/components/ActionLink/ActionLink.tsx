@@ -23,16 +23,14 @@ const ActionLink = ({
     // }, 1000);
   };
   return (
-    <div>
-      <Link
-        href={href}
-        className={linkClassName}
-        target={target}
-        onClick={handleClick}
-      >
-        {pending ? "Loading..." : children}
-      </Link>
-    </div>
+    <Link
+      href={href}
+      className={linkClassName}
+      target={target}
+      onClick={handleClick}
+    >
+      {pending ? "Loading..." : children}
+    </Link>
   );
 };
 

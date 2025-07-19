@@ -47,7 +47,7 @@ const Futures: React.FC = () => {
         {features.map((item, index) => (
           <Paragraf
             key={index}
-            paragrafClassName="flex items-start gap-3 text-gray-800 text-lg bg-white shadow-md p-4 rounded-xl hover:shadow-xl transition"
+            className="flex items-start gap-3 text-gray-800 text-lg bg-white shadow-md p-4 rounded-xl hover:shadow-xl transition"
           >
             {item}
           </Paragraf>

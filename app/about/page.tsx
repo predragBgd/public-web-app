@@ -32,7 +32,7 @@ const About = () => {
         {aboutContent.aboutText.map((text, index) => (
           <Paragraf
             key={index}
-            paragrafClassName="text-lg mb-4 shadow-md p-4 rounded-xl hover:shadow-xl transition"
+            className="text-lg mb-4 shadow-md p-4 rounded-xl hover:shadow-xl transition"
           >
             {text}
           </Paragraf>
