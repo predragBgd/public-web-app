@@ -14,9 +14,6 @@ importers:
       '@emoji-mart/react':
         specifier: ^1.1.1
         version: 1.1.1(emoji-mart@5.6.0)(react@19.1.0)
-      emoji-picker-element:
-        specifier: ^1.26.3
-        version: 1.26.3
       firebase:
         specifier: ^11.7.1
         version: 11.8.1
@@ -1079,9 +1076,6 @@ packages:
 
   emoji-mart@5.6.0:
     resolution: {integrity: sha512-eJp3QRe79pjwa+duv+n7+5YsNhRcMl812EcFVwrnRvYKoNPoQb5qxU8DG6Bgwji0akHdp6D4Ln6tYLG58MFSow==}
-
-  emoji-picker-element@1.26.3:
-    resolution: {integrity: sha512-fOMG44d/3OqTe1pPqlu5H4ZtWg7gK4Le6Bt24JTKtDyce5+EO3Mo8WA95cKHbPSsSsg7ehM12M1x3Y6U6fgvTQ==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3226,8 +3220,6 @@ snapshots:
       gopd: 1.2.0
 
   emoji-mart@5.6.0: {}
-
-  emoji-picker-element@1.26.3: {}
 
   emoji-regex@8.0.0: {}
 
