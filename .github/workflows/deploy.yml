@@ -22,7 +22,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 9 # koristi verziju pnpm koju imaš lokalno
+          version: 10.11.0 # koristi verziju pnpm koju imaš lokalno
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
