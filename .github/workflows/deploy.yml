@@ -3,7 +3,7 @@ name: Deploy Next.js app to GitHub Pages
 on:
   push:
     branches:
-      - main # promeni ako ti je default grana master ili nešto drugo
+      - main # promeni ako je default grana master ili nešto drugo
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 9 # stavi verziju pnpm koju koristiš
+          version: 9 # koristi verziju pnpm koju imaš lokalno
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
