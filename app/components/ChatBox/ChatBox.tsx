@@ -13,7 +13,6 @@ import {
   where,
 } from "firebase/firestore";
 import { useAuth } from "@root/lib/useAuth";
-import { useRouter } from "next/navigation";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 

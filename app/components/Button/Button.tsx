@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { useFormStatus } from "react-dom";
 
 // interface ButtonProps {
@@ -39,7 +38,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loadingText = "Processing…",
       isLoading: isLoadingProp,
       disabled,
-      type = "button", // ← default prevents accidental form-submit
+      type = "button",
       ...nativeProps
     },
     ref
