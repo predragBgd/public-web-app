@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Check current working directory
+        run: pwd
+
       - name: Build Next.js app
         run: pnpm run build
 

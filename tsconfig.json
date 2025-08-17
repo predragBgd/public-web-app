@@ -18,6 +18,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"], // Alias for app folder
       "@root/*": ["./*"] // Alias for root folder
