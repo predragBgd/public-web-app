@@ -37,13 +37,13 @@ export default function Home() {
             href="/download"
             linkClassName="px-6 py-3 bg-yellow-600 text-gray-900 font-semibold rounded-xl hover:bg-gray-900   hover:text-yellow-500 transition"
           >
-            Add to Chrome
+            Add to Chrome!
           </ActionLink>
           <ActionLink
             href="demo"
             linkClassName="px-6 py-3 bg-gray-600 text-white font-semibold rounded-xl hover:bg-gray-900 transition"
           >
-            Watch Demo
+            Watch Demo?
           </ActionLink>
         </div>
       </section>
