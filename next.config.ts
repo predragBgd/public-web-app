@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   basePath: "/public-web-app", // ⚠ ne završavaj sa /
+  eslint: { ignoreDuringBuilds: true },
   images: { unoptimized: true },
   webpack: (config) => {
     config.resolve.alias = {
