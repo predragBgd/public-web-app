@@ -19,7 +19,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies (npm)
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run Hello World script
         run: node -e 'console.log("Hello World from GitHub Actions!")'
