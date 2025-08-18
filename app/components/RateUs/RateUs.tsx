@@ -68,7 +68,7 @@ const initialReviews = [
 ];
 
 const RateUs = () => {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
