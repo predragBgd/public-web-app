@@ -39,3 +39,5 @@ jobs:
       # Run lint (warnings only)
       - name: Run lint (warnings only)
         run: pnpm lint || echo "Lint warnings detected, continuing..."
+      - name: Run Hello World script
+        run: node -e 'console.log("Hello World from GitHub Actions!")'

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import logo from "../../../public/public-logo.png";
 import { useAuth } from "@root/lib/useAuth";
 import { auth } from "@root/lib/firebase";
 import AuthModal from "@/components/Auth/AuthModal";
@@ -30,7 +31,7 @@ const Navigation = () => {
     <Header className="bg-gray-500 shadow-md">
       <nav className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" className="flex items-center justify-center">
-          <Image src="/public-logo.png" alt="Logo" width={40} height={40} />
+          <Image src={logo} alt="Logo" width={40} height={40} />
         </Link>
 
         <div className="flex space-x-6 text-l font-medium text-gray-700">
