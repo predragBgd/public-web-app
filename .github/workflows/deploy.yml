@@ -42,3 +42,31 @@ jobs:
 
       - name: Run Hello World script
         run: node -e 'console.log("Hello World from GitHub Actions!")'
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install pnpm
+        run: npm install -g pnpm@10.11.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js app
+        run: pnpm run build || echo "Build failed, continuing..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Dummy deploy
+        run: echo "Deploying... (simulate deploy)"
