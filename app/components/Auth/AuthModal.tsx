@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { auth, signInWithEmailAndPassword, db } from "@root/lib/firebase";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -14,13 +14,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  // const router = useRouter();
+  // const [loading, setLoading] = useState(false);
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
+    // setLoading(true);
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -36,17 +36,17 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
         const userData = userDocSnap.data();
         if (userData.isActive === false) {
           setError("Your account is inactive. Please contact support.");
-          setLoading(false);
+          // setLoading(false);
           return;
         }
       }
 
       setTimeout(() => {
-        setLoading(false);
+        // setLoading(false);
         onClose();
       }, 100);
     } catch (error) {
-      setLoading(false);
+      // setLoading(false);
       if (typeof error === "object" && error !== null && "code" in error) {
         setError("Login failed. Please check your credentials.");
       } else {
