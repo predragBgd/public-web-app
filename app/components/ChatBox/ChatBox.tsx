@@ -20,14 +20,14 @@ type Reply = {
   id: string;
   email: string;
   message: string;
-  timestamp: any;
+  timestamp: Date;
 };
 
 type Message = {
   id: string;
   email: string;
   message: string;
-  timestamp: any;
+  timestamp: Date;
   replies: Reply[];
 };
 
@@ -140,7 +140,7 @@ export default function ChatBox() {
           >
             <p className="text-sm font-semibold">{msg.email}</p>
             <p className="text-xs text-gray-500">
-              {msg.timestamp?.toDate().toLocaleString()}
+              {msg.timestamp?.toLocaleString()}
             </p>
             <p>{msg.message}</p>
 
@@ -149,7 +149,7 @@ export default function ChatBox() {
                 <div className="bg-blue-100 text-blue-900 p-3 rounded-lg border-1 ">
                   <p className="text-sm font-semibold">{reply.email}</p>
                   <p className="text-xs text-gray-500">
-                    {reply.timestamp?.toDate().toLocaleString()}
+                    {reply.timestamp?.toLocaleString()}
                   </p>
                   <p>{reply.message}</p>
                 </div>
