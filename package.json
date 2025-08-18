@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx"
   },
   "dependencies": {
     "@emoji-mart/data": "^1.2.1",
