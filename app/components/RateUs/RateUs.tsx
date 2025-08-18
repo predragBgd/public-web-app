@@ -66,7 +66,9 @@ const initialReviews = [
     rating: 3,
   },
 ];
-
+interface Emoji {
+  native: string;
+}
 const RateUs = () => {
   const { user } = useAuth();
   const [name, setName] = useState("");
@@ -81,7 +83,7 @@ const RateUs = () => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const commentRef = useRef<HTMLTextAreaElement | null>(null);
 
-  const handleEmojiSelect = (emoji: any) => {
+  const handleEmojiSelect = (emoji: Emoji) => {
     const textarea = commentRef.current;
     if (!textarea) return;
 
