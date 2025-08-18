@@ -40,7 +40,9 @@ const ContactForm: React.FC = () => {
       await sendContact(_ as FormData);
       setForm({ name: "", email: "", message: "" });
       alert("Message sent!");
-    } catch (error) {}
+    } catch (error) {
+      console.error("Contact form error:", error);
+    }
   };
   return (
     <section className="min-h-screen bg-gray-100 py-16 px-4">
