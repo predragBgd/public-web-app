@@ -20,10 +20,15 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
+      # Setup pnpm correctly
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.11.0
+
+      # Verify pnpm is available
+      - name: Verify pnpm
+        run: pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
