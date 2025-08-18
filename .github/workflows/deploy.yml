@@ -1,4 +1,4 @@
-name: CI - Minimal
+name: Simple CI Example
 
 on:
   push:
@@ -7,44 +7,26 @@ on:
   pull_request:
 
 jobs:
-  test:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
-      # Checkout repo
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Install pnpm
-      - name: Install pnpm
-        run: npm install -g pnpm@10.11.0
-
-      # Verify pnpm
-      - name: Verify pnpm
-        run: pnpm -v
-
-      # Install dependencies
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      # Run tests (if present, won't fail if none)
-      - name: Run tests
-        run: pnpm test --if-present || echo "No tests, continuing..."
-
-      # Run lint (warnings only)
-      - name: Run lint (warnings only)
-        run: pnpm lint || echo "Lint warnings detected, continuing..."
+      - name: Install dependencies (npm)
+        run: npm install
 
       - name: Run Hello World script
         run: node -e 'console.log("Hello World from GitHub Actions!")'
+
   build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: hello-world
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -53,12 +35,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
 
-      - name: Install pnpm
-        run: npm install -g pnpm@10.11.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.11.0
 
-      - name: Install dependencies
+      - name: Install dependencies (pnpm)
         run: pnpm install --frozen-lockfile
 
       - name: Build Next.js app
